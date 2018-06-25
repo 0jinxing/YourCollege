@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tabs">
+        <item>课表</item>
+        <item>图书馆</item>
+    </string-array>
+</resources>
