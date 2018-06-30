@@ -6,15 +6,13 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <com.zhuangfei.timetable.TimetableView
+            android:id="@+id/timetable"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="课表界面"/>
-
+            android:layout_height="match_parent"></com.zhuangfei.timetable.TimetableView>
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

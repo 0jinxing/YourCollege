@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 
 open class BaseActivity : AppCompatActivity() {
     open var layoutResID: Int? = null
+    protected val that = this
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

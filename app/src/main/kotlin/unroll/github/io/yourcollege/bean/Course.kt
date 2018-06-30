@@ -8,21 +8,22 @@ import java.util.*
 
 class Course : BaseBean, ScheduleEnable {
 
-    var name: String? = null    // 课程名
-    var time: String? = null    // 上课时间
-    var room: String? = null    // 课室
-    var teacher: String? = null // 老师
-    var weekList: List<Int>? = null // 上课的周列表
+    var id: Int = 0
+    lateinit var group: String
+    lateinit var name: String    // 课程名
+    lateinit var time: String    // 上课时间
+    lateinit var room: String    // 课室
+    lateinit var teacher: String // 老师
+    lateinit var weekList: List<Int> // 上课的周列表
     var start: Int = 0  // 开始上课的节次
     var step: Int = 0   // 上课的节数
     var dayOfWeek: Int = 0  // 星期几上课
     var colorRandom = 0 // 颜色相关
 
-    constructor() {
-        colorRandom = ColorRandom.color()
-    }
+    constructor() {}
 
-    constructor(name: String?, time: String?, room: String?, teacher: String?, weekList: List<Int>?, start: Int, step: Int, dayOfWeek: Int, colorRandom: Int) {
+    constructor(group: String, name: String, time: String, room: String, teacher: String, weekList: List<Int>, start: Int, step: Int, dayOfWeek: Int) {
+        this.group = group
         this.name = name
         this.time = time
         this.room = room
@@ -31,7 +32,7 @@ class Course : BaseBean, ScheduleEnable {
         this.start = start
         this.step = step
         this.dayOfWeek = dayOfWeek
-        this.colorRandom = colorRandom
+        this.colorRandom = ColorRandom.color()
     }
 
     override fun getSchedule(): Schedule {
@@ -54,4 +55,8 @@ class Course : BaseBean, ScheduleEnable {
         }
     }
 
+    fun exceptStartAndStepEquals(other: Course): Boolean {
+        return name.equals(other.name) && room.equals(other.room) && teacher.equals(other.teacher) &&
+                weekList.equals(other.weekList) && dayOfWeek.equals(dayOfWeek)
+    }
 }

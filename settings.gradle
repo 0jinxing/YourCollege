@@ -1,2 +1,2 @@
-include ':app', ':timetable', ':select'
+include ':app', ':timetable'
 project(':timetable').projectDir = new File('TimetableView')
